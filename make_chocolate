@@ -1,0 +1,30 @@
+public int makeChocolate(int small, int big, int goal) {
+  
+  if(big*5 + small < goal)
+    return -1;
+  if(big*5 == goal)
+    return 0;
+  if(big*5 + small == goal)
+    return small;
+    
+  int big_blocks_needed = goal/5;
+  
+  if(big >= big_blocks_needed) {
+    int diffrence = goal - (5*big_blocks_needed);
+  
+  if(small >= diffrence)
+    return diffrence;
+  else
+    return -1;
+  }
+  
+  else {
+    int small_blocks_needed = goal - 5*big;
+    
+    if(small > small_blocks_needed)
+      return small_blocks_needed;
+  }
+  
+  return 0;
+  
+} 
